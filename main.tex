@@ -8,6 +8,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage[default]{raleway}
 \usepackage[margin=1cm, a4paper]{geometry}
+\usepackage{tikz}
+
+\newcommand{\progressbar}[2]{%
+    \begin{tikzpicture}
+        \fill[black!10] (0,0) rectangle (3,0.2); % Le fond (100%)
+        \fill[#2] (0,0) rectangle (#1*3,0.2);   % La progression
+    \end{tikzpicture}%
+}
 
 
 %------------------------------------------------------------------ Variablen
@@ -19,8 +27,8 @@
 
 %------------------------------------------------------------------
 \title{New Simple CV}
-\author{\LaTeX{} Ninja}
-\date{June 2019}
+\author{\LaTeX{} Jean Heckel}
+\date{September 2025}
 
 \pagestyle{empty}
 \begin{document}
@@ -31,8 +39,7 @@
 
 \section*{Start}
 
-\simpleheader{headercolour}{Jack}{Sparrow}{Captain}{white}
-
+\simpleheader{headercolour}{Jean}{Heckel}{Student}{white}
 
 
 %------------------------------------------------
@@ -54,55 +61,44 @@
 
 \footnotesize
 {\setasidefontcolour
-\flushright
+
 \begin{center}
-    \roundpic{jack.jpg}
+    \roundpic{photo_de_profil.jpg}
 \end{center}
 
-\bg{cvgreen}{white}{About me}\\[0.5em]
+{\centering\bg{cvgreen}{white}{About me}\par}\vspace{0.5em}
 
+\flushright
 {\footnotesize
-\lorem\lorem\lorem}
+I am currently a student in mathematics and scientific computing. As part of my master's degree, I am looking for an internship in this field.}
 \bigskip
 
-\bg{cvgreen}{white}{personal} \\[0.5em]
-Jack Sparrow
+\center
+\bg{cvgreen}{white}{Personal} \\[0.5em]
 
-nationality: English 
-
-1690
-
-\bigskip
-
-\bg{cvgreen}{white}{Areas of specialization} \\[0.5em]
-
-Privateering ~•~ Bucaneering ~•~ Parler ~•~ Rum
+Jean Heckel\\
+24/01/2003
 
 \bigskip
 
-
-
-\bigskip
 
 \bg{cvgreen}{white}{Interests}\\[0.5em]
 
-\lorem
-\bigskip
 
-\bg{cvgreen}{white}{Interests}\\[0.5em]
+\texttt{Reading} 
 
-\texttt{R} ~/~ \texttt{Android} ~/~ \texttt{Linux}
+\texttt{Hiking}
 
-\texttt{R} ~/~ \texttt{Android} ~/~ \texttt{Linux}
-
-\texttt{R} ~/~ \texttt{Android} ~/~ \texttt{Linux}
+\texttt{Swimming}
 
 \vspace{4em}
 
-\infobubble{\faAt}{cvgreen}{white}{jack@sparrow.org}
-\infobubble{\faTwitter}{cvgreen}{white}{@sparrow}
-\infobubble{\faFacebook}{cvgreen}{white}{Jack Sparrow}
-\infobubble{\faGithub}{cvgreen}{white}{sparrow}
+\bg{cvgreen}{white}{Contact} \\[0.5em]
+
+\begin{center}
+    \infobubble{\faAt}{cvgreen}{white}{heckeljean@gmail.com} \quad
+    \infobubble{\faGlobe}{cvgreen}{white} {\href{https://github.com/Jean0030}{github.com/Jean0030}}
+\end{center}
 
 \phantom{turn the page}
 
@@ -112,71 +108,65 @@ Privateering ~•~ Bucaneering ~•~ Parler ~•~ Rum
 \switchcolumn
 
 \small
-\section*{Short Resumé}
+\section*{Education}
 
 \begin{tabular}{r| p{0.5\textwidth} c}
-    \cvevent{2018--2021}{Captain of the Black Pearl}{Lead}{East Indies \color{cvred}}{Finally got the goddamn ship back.\lorem\lorem\lorem}{disney.png} \\
-    \cvevent{2016--2017}{Captain of the Black Pearl}{Lead}{Tortuga \color{cvred}}{Found a secret treasure, lost the ship. \lorem\lorem}{medal.jpeg}
+    \cvevent{2025--Present}{Master's in Scientific Computation and Mathematics of Innovation}{University of Strasbourg}
+    {Strasbourg - France \color{cvred}}
+    {This master's degree improves both of my mathematics and computer science skills. It covers different fields such as AI, simulation, HPC (MPI, OpenCL, OpenMP, Kokkos), optimisation or signal and image processing.}{Empty.png} \\
+    \cvevent{2024--2025}{University of Montreal}
+    {Student exchange}
+    {Montreal - Canada\color{cvred}}{This year completed the third year of my bachelor's in Applied Mathematics with a student exchange program. I studied with ODE, PDE, differential forms and programming in depth. }{Empty.png}\\
+    \cvevent{2022--2025}{Bachelor's in Applied Mathematics}{University of Strasbourg}
+    {Strabourg -France\color{cvred}}
+    {This degree gave me fundamental knowledge in computer science and mathematics such as analysis, algebra. }{Empty.png}\\
+
 \end{tabular}
 \vspace{3em}
 
 \begin{minipage}[t]{0.35\textwidth}
 \section*{Degrees}
 \begin{tabular}{r p{0.6\textwidth} c}
-    \cvdegree{1710}{Captain}{Certified}{Tortuga Uni \color{headerblue}}{}{disney.png} \\
-    \cvdegree{1715}{Bucaneering}{M.A.}{London \color{headerblue}}{}{medal.jpeg} \\
-    \cvdegree{1720}{Bucaneering}{B.A.}{London \color{headerblue}}{}{medal.jpeg}
+    \cvdegree{2025}{Applied Mathematics}{Graduated}{University of Strasbourg \color{headerblue}}{}{Empty.png} \\
 \end{tabular}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.3\textwidth}
 \section*{Programming}
-\begin{tabular}{r @{\hspace{0.5em}}l}
-     \bg{skilllabelcolour}{iconcolour}{html, css} &  \barrule{0.4}{0.5em}{cvpurple}\\
-     \bg{skilllabelcolour}{iconcolour}{\LaTeX} & \barrule{0.55}{0.5em}{cvgreen} \\
-     \bg{skilllabelcolour}{iconcolour}{python} & \barrule{0.5}{0.5em}{cvpurple} \\
-     \bg{skilllabelcolour}{iconcolour}{R} & \barrule{0.25}{0.5em}{cvpurple} \\
-     \bg{skilllabelcolour}{iconcolour}{javascript} & \barrule{0.1}{0.5em}{cvpurple} \\
+\begin{tabular}{r @{\hspace{1em}}l}
+    \bg{skilllabelcolour}{iconcolour}{Python} & \progressbar{0.7}{cvpurple} \\ [0.5ex]
+    \bg{skilllabelcolour}{iconcolour}{C++}    & \progressbar{0.7}{cvpurple} \\ [0.5ex]
+    \bg{skilllabelcolour}{iconcolour}{Java}   & \progressbar{0.4}{cvpurple} \\ [0.5ex]
+    \bg{skilllabelcolour}{iconcolour}{C}      & \progressbar{0.4}{cvpurple} \\
 \end{tabular}
 \end{minipage}
 
-\section*{Curriculum}
+\section*{Work Experience}
 \begin{tabular}{r| p{0.5\textwidth} c}
-    \cvevent{2018--2021}{Captain of the Black Pearl}{Lead}{East Indies \color{cvred}}{Finally got the goddamn ship back. \lorem}{disney.png} \\
-    \cvevent{2019}{Freelance Pirate}{Bucaneering}{Tortuga \color{cvred}}{This and that. The usual, aye?  \lorem}{medal.jpeg} \\
+    \cvevent{2023-2025}{Quality controller}{QTEC}{Zweibrücken - Germany\color{cvred}}{Ensured the comformity of automobile pieces.}{Empty.png} \\
+    \cvevent{2022}{Quality controller}{C\&QD}{Wousviller - France\color{cvred}}{Ensured the comformity of different types of pieces.}{Empty.png} \\
+    \cvevent{2022}{Order Picker}{BDR Thermea}{Mertzwiller - France\color{cvred}}{Unloaded of arriving shipments and preparation of orders for boiler parts.}{Empty.png} \\
+
 \end{tabular}
 \vspace{3em}
 
 \begin{minipage}[t]{0.3\textwidth}
-\section*{Certificates \& Grants}
-\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.55\textwidth}}
-    1708 & Captain's Certificates \\
-    1710 & Travel grant \\
-    1715--1716 & Grant from the Pirate's Company
-\end{tabular}
 \bigskip
 
 \section*{Languages}
 \begin{tabular}{l | ll}
-\textbf{English} & C2 & {\phantom{x}\footnotesize mother tongue} \\
-\textbf{French} & C2 & \pictofraction{\faCircle}{cvgreen}{3}{black!30}{1}{\tiny} \\
-\textbf{Spanish} & C2 & \pictofraction{\faCircle}{cvgreen}{1}{black!30}{3}{\tiny} \\
-\textbf{Italian} & C2 & \pictofraction{\faCircle}{cvgreen}{3}{black!30}{1}{\tiny}
+\textbf{French} & C2 & {\phantom{x}\footnotesize Mother tongue} \\
+\textbf{English} & B2 \\
+\textbf{German} & B1 \\
+
 \end{tabular}
 \bigskip
 
 \end{minipage}\hfill
 \begin{minipage}[t]{0.3\textwidth}
-\section*{Publications}
-\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.7\textwidth}}
-    1729 & \emph{How I almost got killed by Lady Swan}, Tortuga Printing Press. \\
-    1720 & ``Privateering for Beginners'', in: \emph{The Pragmatic Pirate} (1/1720).
-\end{tabular}
+
 \bigskip
 
-\section*{Talks}
-\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.6\textwidth}}
-    Nov. 1726 & ``How I lost my ship (\& and how to get it back)'', at: \emph{Annual Pirate's Conference} in Tortuga, Nov. 1726.
-\end{tabular}
+
 \end{minipage}
 
 
@@ -190,12 +180,6 @@ Privateering ~•~ Bucaneering ~•~ Parler ~•~ Rum
 %	FINAL FOOTER
 %----------------------------------------------------------------------------------------
 \setlength{\parindent}{0pt}
-\begin{minipage}[t]{\rightcolwidth}
-\begin{center}\fontfamily{\sfdefault}\selectfont \color{black!70}
-{\small Jack Sparrow \icon{\faEnvelopeO}{cvgreen}{} The Black Pearl \icon{\faMapMarker}{cvgreen}{} Tortuga \icon{\faPhone}{cvgreen}{} 0099/333 5647380 \newline\icon{\faAt}{cvgreen}{} \protect\url{jack@sparrow.com}
-}
-\end{center}
-\end{minipage}
 
 \end{paracol}
 
